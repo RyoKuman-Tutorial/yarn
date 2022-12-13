@@ -64,3 +64,49 @@ $ yarn
 ```
 
 명령어를 통해 yarn.lock 을 생성해준다.
+
+# yarn 과 npm
+
+yarn 은 npm 이 작동하는 모든 동작을 수행할 수 있다. <br/>
+프로젝트를 통해 확인해보자. <br/>
+이 프로젝트의 package.json 이다. <br/>
+
+```json
+{
+  "name": "yarn",
+  "version": "1.0.0",
+  "description": "## 1. 디렉토리 생성",
+  "main": "index.js",
+  "scripts": {
+    "start": "node test.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
+```
+
+scirpt 를 사용하고 있으며, 해당 script 는 node.test.js 라는 명령어를 실행한다. <br/>
+아래는 test.js 의 코드이다.
+
+```js
+console.log("hello world");
+```
+
+npm start 를 입력 해보자. 아래와 같은 결과가 나타난다.
+
+```bash
+$ npm start
+hello world
+```
+
+그 다음으로 yarn stat 를 입력해보자.
+
+```bash
+$ yarn start
+yarn run v1.22.19
+$ node test.js
+hello world
+✨  Done in 0.24s.
+```
+
+완전히 똑같이 동작함을 알 수 있다.
